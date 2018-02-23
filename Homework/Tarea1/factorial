@@ -1,0 +1,19 @@
+//Pseudocodigo para obtener el factorial de un numero N
+
+Leer numero
+Escribir "factorial(numero)"
+
+SubProceso resultado <- factorial(numero)
+    //Esta funcion calcula el factorial de un numero indicado, lo hace de manera recursiva
+
+    Si numero == 0
+        Retornar 1
+    Si no Si numero > 0
+        Retornar numero * factorial(numero-1)
+        Si no Entonces
+            Escribir "error, numero negativo"
+    Fin de Si
+
+Fin SubProceso
+
+

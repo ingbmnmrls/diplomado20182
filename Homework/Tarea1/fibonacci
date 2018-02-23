@@ -1,0 +1,15 @@
+//Pseudocodigo para obtener la serie de fibonacci con base en un numero N indicado
+
+Leer numero
+Escribir "fibonacci(numero)"
+
+SubProceso resultado <- fibonacci(numero)
+    Si numero == 0
+        Retornar 0
+    Si no si numero >= 1
+        Si numero == 1
+        Retornar 1
+        Si no Entonces
+        Retornar fibonacci(numero-1) + fibonacci(numero-2)
+    Fin de Si
+Fin SubProceso
