@@ -10,23 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-     weak var outtletText: UITextField!
+    //: Se hizo un cambio en el nombre de la variable y se agrego @IBOutlet para poder hacer la conexion en el storyboard
+    @IBOutlet weak var outletText: UITextField!
     @IBOutlet weak var aoutletButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        aoutletButton.setTitle("Touch me!", for: .normal)
+        //: Se cambio el texto que se pone como titulo por los requerimientos del cliente
+        aoutletButton.setTitle("Touch me", for: .normal)
         
     }
 
-    func actionButton(_ sender: Any) {
-        outtletText.text = "You are a genius "
+    //: Se agrego el @IBAction para poder enlazar con el boton correspondiente en el storyboard
+    @IBAction func actionButton(_ sender: Any) {
+        outletText.text = "You are a genius "
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
