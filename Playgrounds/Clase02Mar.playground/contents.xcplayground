@@ -3,5 +3,6 @@
     <pages>
         <page name='Army'/>
         <page name='Untitled Page'/>
+        <page name='Closures'/>
     </pages>
 </playground>
