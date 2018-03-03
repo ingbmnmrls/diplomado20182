@@ -54,7 +54,3 @@ func compareSimilarStrings(_ stringA: String,con stringB: String) -> Bool {
     }
     return true
 }
-
-//print(isPrime(n: 10))
-//print(compareSimilarStrings("abcd", con: "cdba"))
-//print(isPalindrome(string: "anitalavalatina"))
