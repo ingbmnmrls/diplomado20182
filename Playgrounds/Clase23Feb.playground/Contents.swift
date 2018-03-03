@@ -5,28 +5,39 @@ import UIKit
 /*:
  ## Funcion que calcule indique si un numero es primo o no
  */
-func isPrime(n: Int) -> Bool{
-    if (n <= 1) {
-        return false
-    }else if (n <= 3) {
-        return true
-    }else if (n % 2 == 0 || n % 3 == 0) {
-        return false
-    }
-    var i = 5
-    while (i * i <= n) {
-        if (n % i == 0 || n % (i + 2) == 0) {
-            return false
+func isPrime(number: Int) -> Bool{
+    var div = 2
+    var primo = 0
+    for _ in 2...div{
+        let test = number % div
+        if(test == 0){
+            primo = primo + 1
+        }else{
+            div = div + 1
         }
     }
-    i = i + 6
-    return true
+    return primo == 0
+}
+
+/*:
+ ## Funcion que obtiene la serie de fibonacci para un numero indicado
+ */
+func fibonacci(elementAt n : Int) -> Int{
+    return n < 2 ? n : (fibonacci(elementAt: n - 1 ) + fibonacci(elementAt: n - 2))
 }
 
 /*:
  ## Funcion que lleva a cabo fibonacci pero imprime el valor unicamente si se trata de un numero primo
  */
-
+func fibonacciPrime(n: Int) {
+    var temp = 0
+    for index in 0...n {
+        temp = fibonacci(elementAt: index)
+        if (isPrime(number: temp)) {
+            print(temp)
+        }
+    }
+}
 
 /*:
  ## Funcion que identifica si una cadena es palindromo
