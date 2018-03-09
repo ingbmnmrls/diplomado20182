@@ -6,9 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -18,66 +24,170 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="Iax-kQ-zLp">
-                                <rect key="frame" x="143" y="40" width="128" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octocat" translatesAutoresizingMaskIntoConstraints="NO" id="Iax-kQ-zLp">
+                                <rect key="frame" x="137" y="40" width="140" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="vb6-zv-cJn"/>
-                                    <constraint firstAttribute="width" constant="128" id="vvT-NZ-eo1"/>
+                                    <constraint firstAttribute="height" constant="140" id="vb6-zv-cJn"/>
+                                    <constraint firstAttribute="width" constant="140" id="vvT-NZ-eo1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Swift!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOG-Mf-nv3">
-                                <rect key="frame" x="20" y="193" width="374" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to GitHub!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOG-Mf-nv3">
+                                <rect key="frame" x="20" y="190" width="374" height="27.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" name="very-pale-yellow"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ett-3i-Vwy">
-                                <rect key="frame" x="10" y="233.33333333333334" width="394" height="30.000000000000028"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ett-3i-Vwy">
+                                <rect key="frame" x="10" y="257.33333333333331" width="394" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bog-H6-DVI">
-                                        <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="30"/>
-                                        <state key="normal" title="Save"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="121.33333333333333" height="40"/>
+                                        <color key="backgroundColor" name="lapis-lazuli"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" name="sea-foam-green"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7xS-1Q-Dc6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6C-TN-0S2">
-                                        <rect key="frame" x="131.33333333333331" y="0.0" width="131.33333333333331" height="30"/>
-                                        <state key="normal" title="Edit"/>
+                                        <rect key="frame" x="136.33333333333334" y="0.0" width="121.33333333333334" height="40"/>
+                                        <color key="backgroundColor" name="lapis-lazuli"/>
+                                        <state key="normal" title="Commit">
+                                            <color key="titleColor" name="sea-foam-green"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="commitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aIu-vp-bPw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKQ-VX-C0Y">
-                                        <rect key="frame" x="262.66666666666669" y="0.0" width="131.33333333333331" height="30"/>
-                                        <state key="normal" title="Delete"/>
+                                        <rect key="frame" x="272.66666666666669" y="0.0" width="121.33333333333331" height="40"/>
+                                        <color key="backgroundColor" name="lapis-lazuli"/>
+                                        <state key="normal" title="Push">
+                                            <color key="titleColor" name="sea-foam-green"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CbK-L2-9yv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="feh-jZ-24t"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbb-WX-nsr">
-                                <rect key="frame" x="157" y="666" width="100" height="50"/>
+                                <rect key="frame" x="107" y="656" width="200" height="40"/>
+                                <color key="backgroundColor" name="awesome"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="OaL-kp-N9i"/>
-                                    <constraint firstAttribute="height" constant="50" id="eTN-hZ-bxv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="OaL-kp-N9i"/>
+                                    <constraint firstAttribute="height" constant="40" id="eTN-hZ-bxv"/>
                                 </constraints>
-                                <state key="normal" title="YOLO"/>
+                                <state key="normal" title="Pull request">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pullRequestAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RrC-wZ-OXu"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="$ git _" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WEI-Tt-ATs">
+                                <rect key="frame" x="10" y="322" width="394" height="274"/>
+                                <color key="backgroundColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" name="green-terminal"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-eF-1aF">
+                                <rect key="frame" x="20" y="50" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LHe-Kf-mcb"/>
+                                    <constraint firstAttribute="width" constant="30" id="mik-6N-JqL"/>
+                                </constraints>
+                                <color key="tintColor" name="awesome"/>
+                                <connections>
+                                    <action selector="changeBackgroundForAllElements:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EZr-Ug-B8n"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="green-sheen"/>
                         <constraints>
                             <constraint firstItem="Iax-kQ-zLp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5Gg-UP-IBH"/>
                             <constraint firstItem="kbb-WX-nsr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AK4-HJ-cA1"/>
-                            <constraint firstItem="YOG-Mf-nv3" firstAttribute="top" secondItem="Iax-kQ-zLp" secondAttribute="bottom" constant="25" id="FNs-tm-5zD"/>
+                            <constraint firstItem="ceT-eF-1aF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="CCq-fs-zGI"/>
+                            <constraint firstItem="YOG-Mf-nv3" firstAttribute="top" secondItem="Iax-kQ-zLp" secondAttribute="bottom" constant="10" id="FNs-tm-5zD"/>
+                            <constraint firstItem="WEI-Tt-ATs" firstAttribute="top" secondItem="ett-3i-Vwy" secondAttribute="bottom" constant="25" id="Ovs-6a-paH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WEI-Tt-ATs" secondAttribute="trailing" constant="10" id="V2l-Ka-6bU"/>
+                            <constraint firstItem="ceT-eF-1aF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wec-UX-yym"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ett-3i-Vwy" secondAttribute="trailing" constant="10" id="XWk-7C-4NF"/>
-                            <constraint firstItem="ett-3i-Vwy" firstAttribute="top" secondItem="YOG-Mf-nv3" secondAttribute="bottom" constant="20" id="e60-3Z-3mp"/>
+                            <constraint firstItem="ett-3i-Vwy" firstAttribute="top" secondItem="YOG-Mf-nv3" secondAttribute="bottom" constant="40" id="e60-3Z-3mp"/>
                             <constraint firstItem="YOG-Mf-nv3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="g10-hY-Jqk"/>
+                            <constraint firstItem="WEI-Tt-ATs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="gCo-uq-UQ8"/>
                             <constraint firstItem="Iax-kQ-zLp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gMr-HD-O6Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kbb-WX-nsr" secondAttribute="bottom" constant="20" id="odV-Ad-sCW"/>
+                            <constraint firstItem="kbb-WX-nsr" firstAttribute="top" secondItem="WEI-Tt-ATs" secondAttribute="bottom" constant="60" id="lBR-CP-0dB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kbb-WX-nsr" secondAttribute="bottom" constant="40" id="odV-Ad-sCW"/>
                             <constraint firstItem="ett-3i-Vwy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="v89-6Y-ScB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YOG-Mf-nv3" secondAttribute="trailing" constant="20" id="zJR-7P-MKA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="bog-H6-DVI" id="Pz3-IX-nmx"/>
+                        <outlet property="changeBackgroundButton" destination="ceT-eF-1aF" id="7HV-Xy-zet"/>
+                        <outlet property="commandLineTextView" destination="WEI-Tt-ATs" id="J1H-WA-y6f"/>
+                        <outlet property="commitButton" destination="H6C-TN-0S2" id="eJn-MR-nr5"/>
+                        <outlet property="pullButton" destination="kbb-WX-nsr" id="9Y8-Cb-7xw"/>
+                        <outlet property="pushButton" destination="cKQ-VX-C0Y" id="uBQ-hX-gk8"/>
+                        <outlet property="titleLabel" destination="YOG-Mf-nv3" id="3G8-5r-hlO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="125.54347826086958"/>
         </scene>
     </scenes>
     <resources>
-        <image name="swift" width="128" height="128"/>
+        <image name="octocat" width="400" height="332"/>
+        <namedColor name="awesome">
+            <color red="1" green="0.086274509803921567" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green-sheen">
+            <color red="0.4392156862745098" green="0.75686274509803919" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green-terminal">
+            <color red="0.011764705882352941" green="0.70980392156862748" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lapis-lazuli">
+            <color red="0.14117647058823529" green="0.4823529411764706" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sea-foam-green">
+            <color red="0.69803921568627447" green="0.85882352941176465" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="very-pale-yellow">
+            <color red="0.95294117647058818" green="1" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
